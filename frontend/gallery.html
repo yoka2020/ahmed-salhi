@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="run.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Ahmed</a>
+        <nav class="navigation">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#projects">Portfolio</a>
+            <a href="index.html#about me">about me</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#projects">Portfolio</a></li>
+              <li><a href="index.html#about me">about me</a></li>
+              <li><a href="index.html#Contact">Contact</a></li>
+              
+            </ul>
+        </div>
+    </header>
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item" id="1">
+                <a href="images/resedent evil-v2-Recovered.jpg" data-fancybox="gallery">
+                    <img src="images/resedent evil-v2-Recovered.jpg" alt="Image 1">
+                </a>
+                <button class="love-button" onclick="toggleLove(this, 1);">❤️</button>
+                <span class="love-count" id="love-count-1">0</span>
+                <p class="description">Survival horror in one frame: Resident Evil 2 experience</p>
+            </div>  
+            <div class="gallery-item" id="2">
+                <a href="images/dragon s dogma 2 episode 1.jpg" data-fancybox="gallery">
+                    <img src="images/dragon s dogma 2 episode 1.jpg" alt="Image 2">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,2);">❤️</button>
+                <span class="love-count" id="love-count-2">0</span>
+                <p class="description">Conquer mythical creatures in Dragon's Dogma 2.</p>
+            </div>
+            
+            <div class="gallery-item" id="3">
+                <a href="images/Poppy Playtime 3-v1.jpg" data-fancybox="gallery">
+                    <img src="images/Poppy Playtime 3-v1.jpg" alt="Image 3">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,3);">❤️</button>
+                <span class="love-count" id="love-count-3">0</span>
+                <p class="description">Enjoy endless fun in Poppy 3 with exciting playtime!</p>
+            </div>
+            
+            <div class="gallery-item" id="4">
+                <a href="images/base.jpg" data-fancybox="gallery">
+                    <img src="images/base.jpg" alt="Image 4">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,4);">❤️</button>
+                <span class="love-count" id="love-count-4">0</span>
+                <p class="description">Unlocking Your Dream: The Ultimate Guide to Buying a House</p>
+            </div>
+            <div class="gallery-item" id="5">
+                <a href="images/fortnite.jpg" data-fancybox="gallery">
+                    <img src="images/fortnite.jpg" alt="Image 5">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,5);">❤️</button>
+                <span class="love-count" id="love-count-5">0</span>
+                <p class="description">Fortnite: Unveiling the Latest Update!</p>
+            </div>
+            <div class="gallery-item" id="6">
+                <a href="images/lazania.jpg" data-fancybox="gallery">
+                    <img src="images/lazania.jpg" alt="Image 6">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,6);">❤️</button>
+                <span class="love-count" id="love-count-6">0</span>
+                <p class="description">Lasagna: A Delicious and Easy Recipe</p>
+            </div>
+            <div class="gallery-item" id="7">
+                <a href="images/pizza.jpg" data-fancybox="gallery">
+                    <img src="images/pizza.jpg" alt="Image 7">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,7);">❤️</button>
+                <span class="love-count" id="love-count-7">0</span>
+                <p class="description">Delicious Homemade Pizza Recipe</p>
+            </div>
+            <div class="gallery-item" id="8">
+                <a href="images/overwatch caracter.jpg" data-fancybox="gallery">
+                    <img src="images/overwatch caracter.jpg" alt="Image 8">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,8);">❤️</button>
+                <span class="love-count" id="love-count-8">0</span>
+                <p class="description">Mastering Hanzo: Your Ultimate Overwatch Guide</p>
+            </div>
+            <div class="gallery-item" id="9">
+                <a href="images/takila book1.jpg" data-fancybox="gallery">
+                    <img src="images/takila book1.jpg" alt="Image 9">
+                </a>
+                <button class="love-button" onclick="toggleLove(this,9);">❤️</button>
+                <span class="love-count" id="love-count-9">0</span>
+                <p class="description">Power: Unleashing the Hidden Forces That Shape Our Lives</p>
+            </div>
+            
+            <!-- Add more gallery items as needed -->
+        </div>
+        <footer class="footer">
+            <p class="footer-title">Copyrights @ <span>Ahmed Salhi</span></p>
+            <div class="social-icons">
+                <a href="https://www.upwork.com/freelancers/~017936281f4d209de1?mp_source=share" target="_blank"><i class="fab fa-upwork"></i></a>
+                <a href="https://www.behance.net/ahmedsalhi3" target="_blank"><i class="fa-brands fa-square-behance"></i></a>
+                <a href="https://www.pinterest.com/a7medgss/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" target="_blank"><i class=""></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        function toggleMobileMenu(menu) {
+            menu.classList.toggle('open');
+        }
+        function toggleLove(button, imageId) {
+            const userId = 'user123'; // You can replace this with the actual user ID
+            fetch('http://localhost:5500/toggleLove', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userId: userId, imageId: imageId }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    var countElement = button.nextElementSibling;
+                    var currentCount = parseInt(countElement.textContent);
+                    if (data.action === 'increment') {
+                        // If action is 'increment', increase count
+                        countElement.textContent = currentCount + 1;
+                    } else {
+                        // If action is 'decrement', decrease count
+                        countElement.textContent = currentCount - 1;
+                    }
+                    button.disabled = true; // Disable the button after interaction
+                } else {
+                    console.error('Failed to toggle love count:', data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error toggling love count:', error);
+            });
+        }
+
+        // Function to retrieve and update love count for each image
+        function updateLoveCounts() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach(item => {
+                const imageId = item.getAttribute('id');
+                fetch(`http://localhost:5500/getLoveCount/${imageId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const loveCountElement = document.getElementById(`love-count-${imageId}`);
+                        if (data.success && loveCountElement) {
+                            loveCountElement.textContent = data.loveCount;
+                        } else {
+                            console.error('Failed to retrieve love count for image', imageId);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error retrieving love count:', error);
+                    });
+            });
+        }
+
+        // Call updateLoveCounts when the page loads
+        window.onload = updateLoveCounts;
+    </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Gallery styles */
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; 
+}
+
+
+header {
+  background-color: #f0f0f0;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px ;
+  top: 0; /* Position the header at the top */
+}
+
+
+.logo{
+  text-decoration: none;
+  color: #3a6cf4;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.navigation a{
+  color: #3a6cf4;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 30px;
+}
+
+.navigation a:hover{
+  color: #601cfc;
+}
+
+
+
+
+
+.description {
+  max-width: 100%;
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  color: #5f5f5fbb;
+  text-align: left;
+  padding: 1em;
+  
+}
+/* Override FancyBox background color */
+.fancybox-bg {
+  background-color: #000 !important; /* Change background color */
+}
+
+/* Customize Fancybox toolbar */
+.fancybox-toolbar {
+  background-color: #fff; /* Background color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Customize Fancybox toolbar buttons */
+.fancybox-toolbar button {
+  color: #000; /* Icon color */
+}
+
+/* Customize Fancybox toolbar buttons on hover */
+.fancybox-toolbar button:hover {
+  color: #aaa; /* Icon color on hover */
+}
+
+/* Customize Fancybox navigation arrows */
+.fancybox-button--arrow_left,
+.fancybox-button--arrow_right {
+  color: #fff; /* Arrow color */
+  background-color: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  width: 60px; /* Set width */
+  height: 60px; /* Set height */
+  font-size: 24px; /* Set font size */
+  line-height: 50px; /* Center the arrow vertically */
+  overflow: hidden; /* Hide overflow */
+  position: absolute; /* Position absolutely */
+  transform: translateY(-10%); /* Adjust vertical position */
+  
+  z-index: 10; /* Ensure arrows are on top of the circular background */
+  transition: opacity 0.5s ease; /* Add transition for opacity */
+  opacity: 0; /* Initially hide arrows */
+}
+
+/* Adjust position for left arrow */
+.fancybox-button--arrow_left {
+  left: 10px; /* Position on the left */
+  transform: translateX(100%);
+}
+
+/* Adjust position for right arrow */
+.fancybox-button--arrow_right {
+  right: 10px; /* Position on the right */
+  transform: translateX(-100%);
+}
+
+/* Show arrows one by one */
+.fancybox-button--arrow_left.show,
+.fancybox-button--arrow_right.show {
+  opacity: 1; /* Show arrows */
+}
+
+.love-button {
+  position: absolute;
+  max-width: 100%;
+  display: block;
+  
+  bottom: 30px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: pulse 1.5s infinite alternate; /* Add pulse animation */
+}
+
+.love-button:hover {
+  opacity: 0.7;
+  animation: none; /* Stop the pulse animation on hover */
+  
+}
+
+.love-count {
+  max-width: 100%;
+  display: block;
+  
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Animation keyframes for pulse effect */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000016;
+  color: #ffffff;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+
+.footer-title {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.footer-title span {
+  color: #3a6cf4;
+}
+
+.footer .social-icons a {
+  font-size: 1.3em;
+  padding: 0 12px 0 0;
+  color: #fff;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 1.7em;
+  padding-right: 30px;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: #3a6cf4;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding-left: 30px;
+  
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+  
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: #3a6cf4;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  background-color: #000016ea;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  
+  }    
+
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 1280px) {
+  
+}
+@media screen and (max-width: 1024px) {
+  
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    font-size: 10px;
+  }
+
+  header {
+    padding: 10px 10px;
+  }
+  
+  .gallery-container{
+    padding: 80px 20px;
+  }
+  .navigation a {
+      padding-left: 10px;
+  }
+  #hamburger-icon div {
+    width: 30px !important;
+    
+  }
+}
+@media screen and (max-width: 912px) {
+  
+  
+
+}
+
+@media screen and (max-width: 853px) {
+  
+  }
+  
+
+
+@media screen and (max-width: 641px) {
+ 
+  ul a {
+      font-size: 28px;
+      font-weight: 500;
+      margin-left: -30px !important;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+
+  header nav {
+      display: none;
+    }
+  
+    #hamburger-icon {
+      display: block;
+  }
+}
+@media screen and (max-width: 430px) {
+
+
+  #hamburger-icon div {
+      margin: 10px;
+  }
+
+
+  .mobile-menu {
+      width: 100%;
+  }
+
+  ul a {
+      font-size: 28px;
+      font-weight: 500;
+      margin-left: -30px !important;
+  }
+}
+
+
+@media screen and (max-width: 414px) {
+  
+ 
+
+  
+}
+@media screen and (max-width: 360px) {
+  .gallery-item  {
+
+    width: 300px !important;
+    left: -10px !important;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 375px) {
+
+  .gallery{
+    width: 100%;
+    padding: 0;
+  }
+  .gallery-item  {
+
+    width: 300px !important;
+    left: 0;
+    margin: 0;
+  }
+ 
+  .mobile-menu {
+      width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 300px) {
+  
+}
+.gallery {
+  background-color: #000016;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px;
+}
+.gallery-item {
+  margin: 20px;
+  min-height: 14em;
+  max-width:23em;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  background-color: #fff; /* Set background color to white */
+  
+}
+.gallery-container{
+  margin-top: 60px;
+  margin-bottom: 90px;
+}
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+.gallery-item img {
+  max-width: 100%; /* Adjust as needed */
+  border: 1px solid #fff;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.7s ease; /* Adjust transition duration for smoother effect */
+}
+body{
+  background-color: #000016;
+}
