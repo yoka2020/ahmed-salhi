@@ -1,15 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
+const jsonServer = require("json-server");
 
 const app = express();
-const port = 5500;
+const port = process.env.PORT || 5500;
 
 // Enable CORS
 app.use(cors());
 
 // Connect to SQLite database
 const db = new sqlite3.Database('gallery.sqlite', sqlite3.OPEN_READWRITE);
+
+// JSON Server
+const jsonServerApp = jsonServer.create();
+const jsonRouter = jsonServer.router("db.json");
+const jsonMiddlewares = jsonServer.defaults();
+
+jsonServerApp.use(jsonMiddlewares);
+jsonServerApp.use(jsonRouter);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -79,6 +88,9 @@ app.get('/getLoveCount/:imageId', (req, res) => {
         }
     });
 });
+
+// Combine both servers to run on the same port
+app.use('/api', jsonServerApp);
 
 // Start the server
 app.listen(port, () => {
