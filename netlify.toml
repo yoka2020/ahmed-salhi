@@ -1,2 +1,14 @@
 [build]
-    functions = "functions"
+  functions = "functions"
+ 
+  command = "npm run build"  # Adjust this based on your build setup
+
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*.html"
+    [headers.values]
+      Cache-Control = "public, max-age=0, must-revalidate"

@@ -7,7 +7,7 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="run.css">
+    <link rel="stylesheet" href="css/run.css">
     <style>
         
     </style>
@@ -18,7 +18,7 @@
         <nav class="navigation">
             <a href="index.html#services">Services</a>
             <a href="index.html#projects">Portfolio</a>
-            <a href="index.html#about me">about me</a>
+            <a href="index.html#about-me">about me</a>
             <a href="index.html#contact">Contact</a>
         </nav>
         <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -129,9 +129,14 @@
         function toggleMobileMenu(menu) {
             menu.classList.toggle('open');
         }
+        // Generate a unique user ID for the user
+        function generateUserId() {
+            // Generate a random alphanumeric string
+            return 'user_' + Math.random().toString(36).substr(2, 9);
+        }
+
         function toggleLove(button, imageId) {
-            const userId = 'user123'; // You can replace this with the actual user ID
-            fetch('http://localhost:5500/toggleLove', {
+            fetch('https://ahmed-salhi.netlify.app/.netlify/functions/toggleLove', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -143,13 +148,7 @@
                 if (data.success) {
                     var countElement = button.nextElementSibling;
                     var currentCount = parseInt(countElement.textContent);
-                    if (data.action === 'increment') {
-                        // If action is 'increment', increase count
-                        countElement.textContent = currentCount + 1;
-                    } else {
-                        // If action is 'decrement', decrease count
-                        countElement.textContent = currentCount - 1;
-                    }
+                    countElement.textContent = data.action === 'increment' ? currentCount + 1 : currentCount - 1;
                     button.disabled = true; // Disable the button after interaction
                 } else {
                     console.error('Failed to toggle love count:', data.error);
@@ -160,12 +159,11 @@
             });
         }
 
-        // Function to retrieve and update love count for each image
         function updateLoveCounts() {
             const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach(item => {
+            galleryItems.forEach(item => {
                 const imageId = item.getAttribute('id');
-                fetch(`http://localhost:5500/getLoveCount/${imageId}`)
+                fetch(`https://ahmed-salhi.netlify.app/.netlify/functions/getLoveCount/${imageId}`)
                     .then(response => response.json())
                     .then(data => {
                         const loveCountElement = document.getElementById(`love-count-${imageId}`);
@@ -181,7 +179,6 @@
             });
         }
 
-        // Call updateLoveCounts when the page loads
         window.onload = updateLoveCounts;
     </script>
 </body>

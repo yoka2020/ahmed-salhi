@@ -1,0 +1,44 @@
+{
+  "LoveCounts": [
+    {
+      "image_id": 1,
+      "love_count": 3
+    },
+    {
+      "image_id": 2,
+      "love_count": 1
+    },
+    {
+      "image_id": 3,
+      "love_count": 5
+    },
+    {
+      "image_id": 4,
+      "love_count": 3
+    },
+    {
+      "image_id": 5,
+      "love_count": 6
+    },
+    {
+      "image_id": 6,
+      "love_count": 2
+    },
+    {
+      "image_id": 7,
+      "love_count": 5
+    },
+    {
+      "image_id": 8,
+      "love_count": 4
+    },
+    {
+      "image_id": 9,
+      "love_count": 4
+    },
+    {
+      "image_id": 10,
+      "love_count": 3
+    }
+  ]
+}
